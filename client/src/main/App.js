@@ -1,36 +1,50 @@
 import React from "react";
-import { Route, Switch, withRouter} from "react-router-dom";
+
+import { Route, Switch, withRouter, Redirect } from "react-router-dom";
 
 import Navbar from "./Navbar";
 import AboutComponent from "./routes/about/AboutComponent";
-import SignupContainer from "./routes/signup/Container";
-import SigninContainer from "./routes/signin/Container";
-import selectorContainer from "./routes/selector/Container";
-import ProfileComponent from "./routes/profile/Component";
+import SignupContainer from "./routes/signup/SignUpContainer";
+import SigninContainer from "./routes/signin/SignInContainer";
+import SelectorContainer from "./routes/selector/SelectorContainer";
+import ProfileComponent from "./routes/profile/ProfileComponent";
+import LearnContainer from "./routes/learn/LearnContainer";
 import ProtectedRoute from "./routes/ProtectedRoute";
+import { connect } from 'react-redux';
+import {verify} from "../redux/actions/index";
 
 class App extends React.Component {
-  render() {
-      return(
-          <div className ="app-wrapper">
-              <Navbar />
-              <Switch>
-                  <Route exact path="/" component={AboutComponent} />{/* What this app is about?, who made it, github/linkedin etc*/}
-                  <Route path ="/signup" component={SignupContainer} />
-                  <Route path ="/signin" component={SigninContainer} />
-
-                  <ProtectedRoute path="/selector" component={selectorContainer} />{/* will show username selected language, selected level*/}
-                  <ProtectedRoute path="/profile" component={ProfileComponent} />{/* will show Welcome to learning, username, language, score-card*/}
-                  {/*
-                    <ProtectedRoute path="/learn" component={LearnContainer}
-                  />//will have listwords and listform that shows add words and
-                  practice words
-                  */}
-
-              </Switch>
-          </div>
-      )
-  }
+    componentDidMount(){
+        this.props.verify();
+    }
+    render() {
+        const isAuthenticated = this.props.isAuthenticated;
+        return (
+            <div className="app-wrapper">
+                <Navbar />
+                <Switch>
+                    <Route exact path="/" component={AboutComponent} />{/* What this app is about?, who made it, github/linkedin etc*/}
+                    <Route path="/signin" render={(props) => {
+                        return isAuthenticated ?
+                            <Redirect to="/profile" /> :
+                            <SigninContainer {...props} />
+                    }} />
+                    <Route path="/signup" render={(props) => {
+                        return isAuthenticated ?
+                            <Redirect to="/profile" /> :
+                            <SignupContainer {...props} />
+                    }} />
+                    <ProtectedRoute path="/selector" component={SelectorContainer} />{/* will show username selected language, selected level*/}
+                    <ProtectedRoute path="/profile" component={ProfileComponent} />{/* will show Welcome to learning, username, language, score-card*/}
+                    <ProtectedRoute path="/learn" component={LearnContainer} />
+                </Switch>
+            </div>
+        )
+    }
 }
 
-export default App;
+const mapStateToProps = (state) =>{
+    return state;
+}
+
+export default withRouter(connect(mapStateToProps,{verify})(App));
