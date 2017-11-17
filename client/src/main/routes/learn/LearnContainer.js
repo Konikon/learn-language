@@ -14,17 +14,40 @@ class LearnContainer extends Component {
             }
         }
         this.genList = this.genList.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.addNewWord = this.addNewWord.bind(this);
+    }
+
+    handleChange(e) {
+      // console.log(this.state.inputs)
+        e.persist();
+            this.setState((prevState) => {
+                return {
+                    inputs: {
+                      ...prevState.inputs,
+                      [e.target.name]: e.target.value
+                }
+            }
+        })
     }
 
     genList() {
         return this.props.words.map(word => <WordContainer key={word._id} word={word} />);
     }
 
+    addNewWord() {
+    this.props.addWord(this.state.inputs);
+    this.setState({ inputs: { textEn: '', description: '' } });
+}
+
     render() {
         const { inputs } = this.state;
         return (
             <LearnComponent
                 genList={this.genList}
+                handleChange={this.handleChange}
+                addNewWord={this.addNewWord}
+                inputs={inputs}
             />
         )
     }
