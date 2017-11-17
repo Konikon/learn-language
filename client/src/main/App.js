@@ -11,7 +11,7 @@ import ProfileComponent from "./routes/profile/ProfileComponent";
 import LearnContainer from "./routes/learn/LearnContainer";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import { connect } from 'react-redux';
-import {verify} from "../redux/actions/index";
+import {verify, loadWords} from "../redux/actions/index";
 
 class App extends React.Component {
     componentDidMount(){
@@ -47,4 +47,4 @@ const mapStateToProps = (state) =>{
     return state;
 }
 
-export default withRouter(connect(mapStateToProps,{verify})(App));
+export default withRouter(connect(mapStateToProps,{verify, loadWords})(App));
