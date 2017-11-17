@@ -15,6 +15,7 @@ class WordContainer extends Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.toggleUpdating = this.toggleUpdating.bind(this);
+        this.updateWord = this.updateWord.bind(this);
     }
 
     toggleUpdating() {
@@ -33,17 +34,25 @@ class WordContainer extends Component {
         })
     }
 
+    updateWord() {
+        const { editWord, word } = this.props;
+        const { textEn, description } = this.state.inputs;
+        editWord(word._id, { textEn, description });
+        this.setState({ isUpdating: false });
+    }
+
     render() {
         const { word } = this.props;
         const { isUpdating, inputs } = this.state;
         return (
             <WordComponent
                 word={word}
-                inputs={this.state.inputs}
                 handleChange={this.handleChange}
                 inputs={inputs}
                 isUpdating={isUpdating}
                 toggleUpdating={this.toggleUpdating}
+                updateWord={this.updateWord}
+
             />
         );
     }
