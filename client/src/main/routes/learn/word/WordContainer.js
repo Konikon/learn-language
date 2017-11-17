@@ -7,6 +7,7 @@ class WordContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            isUpdating: true,
             inputs: {
                 textEn: props.word.textEn,
                 description: props.word.description
@@ -14,7 +15,7 @@ class WordContainer extends Component {
         }
         this.handleChange = this.handleChange.bind(this);
     }
-
+    
     handleChange(e) {
         e.persist();
         this.setState((prevState) => {
@@ -29,13 +30,14 @@ class WordContainer extends Component {
 
     render() {
         const { word } = this.props;
-        const { inputs } = this.state;
+        const { isUpdating, inputs } = this.state;
         return (
             <WordComponent
                 word={word}
                 inputs={this.state.inputs}
                 handleChange={this.handleChange}
                 inputs={inputs}
+                isUpdating={isUpdating}
             />
         );
     }
