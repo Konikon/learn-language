@@ -7,15 +7,20 @@ class WordContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isUpdating: true,
+            isUpdating: false,
             inputs: {
                 textEn: props.word.textEn,
                 description: props.word.description
             }
         }
         this.handleChange = this.handleChange.bind(this);
+        this.toggleUpdating = this.toggleUpdating.bind(this);
     }
-    
+
+    toggleUpdating() {
+        this.setState(prevState => ({ isUpdating: !prevState.isUpdating }));
+    }
+
     handleChange(e) {
         e.persist();
         this.setState((prevState) => {
@@ -38,6 +43,7 @@ class WordContainer extends Component {
                 handleChange={this.handleChange}
                 inputs={inputs}
                 isUpdating={isUpdating}
+                toggleUpdating={this.toggleUpdating}
             />
         );
     }
