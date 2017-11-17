@@ -3,20 +3,28 @@ import { connect } from 'react-redux';
 import { deleteWord } from '../../../../redux/actions/index';
 
 function WordComponent(props) {
+    const { textEn, description, _id } = props.word;
+    const { handleChange, inputs, deleteWord } = props;
     return (
         <div>
             <div>
-                <input value={props.inputs.textEn} />
+                <input
+                    name="textEn"
+                    onChange={handleChange}
+                    value={inputs.textEn} />
                 <br />
-                <input name="description" value={props.inputs.description}/>
+                <input
+                    name="description"
+                    onChange={handleChange}
+                    value={inputs.description}/>
                 <br />
                 <button className="btn btn-success">Confirm</button>
                 <button className="btn btn-default">Cancel</button>
             </div>
             <div>
-                <h3>{props.textEn}</h3>
-                <p>{props.description}</p>
-                <button className="btn btn-danger">Remove</button>
+                <h3>{textEn}</h3>
+                <p>{description}</p>
+                <button className="btn btn-danger" onClick={() => deleteWord(_id)}>Remove</button>
                 <button className="btn btn-primary">Update</button>
             </div>
         </div>

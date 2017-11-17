@@ -7,11 +7,23 @@ export function LearnComponent(props) {
             { props.genList() }
             <br />
             <div>
-                <input placeholder="English text" />
+                <input
+                    name="textEn"
+                    placeholder="English text"
+                    value={inputs.textEn}
+                    onChange={handleChange}/>
+
                 <br /><br />
-                <input placeholder="Vn text"/>
+
+                <input
+                    name="description"
+                    value={inputs.description}
+                    onChange={handleChange}
+                    placeholder="Vn text"
+                />
+
                 <br /><br />
-                <button>Add new word</button>
+                <button className="btn btn-success" onClick={addNewWord}>Add new word</button>
             </div>
         </div>
     )

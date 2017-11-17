@@ -12,13 +12,30 @@ class WordContainer extends Component {
                 description: props.word.description
             }
         }
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(e) {
+        e.persist();
+        this.setState((prevState) => {
+            return {
+                inputs: {
+                    ...prevState.inputs,
+                    [e.target.name]: e.target.value
+                }
+            }
+        })
     }
 
     render() {
+        const { word } = this.props;
+        const { inputs } = this.state;
         return (
             <WordComponent
-                word={this.state.word}
+                word={word}
                 inputs={this.state.inputs}
+                handleChange={this.handleChange}
+                inputs={inputs}
             />
         );
     }
