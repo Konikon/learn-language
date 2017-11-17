@@ -9,6 +9,7 @@ import SigninContainer from "./routes/signin/SignInContainer";
 import SelectorContainer from "./routes/selector/SelectorContainer";
 import ProfileComponent from "./routes/profile/ProfileComponent";
 import LearnContainer from "./routes/learn/LearnContainer";
+import StudyContainer from "./routes/study/StudyContainer";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import { connect } from 'react-redux';
 import {verify, loadWords} from "../redux/actions/index";
@@ -37,6 +38,7 @@ class App extends React.Component {
                     <ProtectedRoute path="/selector" component={SelectorContainer} />{/* will show username selected language, selected level*/}
                     <ProtectedRoute path="/profile" component={ProfileComponent} />{/* will show Welcome to learning, username, language, score-card*/}
                     <ProtectedRoute path="/learn" component={LearnContainer} />
+                    <ProtectedRoute path="/study" component={StudyContainer} />
                 </Switch>
             </div>
         )
