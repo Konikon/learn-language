@@ -16,6 +16,7 @@ export function verify() {
             .then((response) => {
                 let { success, user } = response.data;
                 dispatch(logon(success, user));
+                dispatch(loadWords());  //
             })
             .catch((err) => {
                 console.error(err);
@@ -45,6 +46,7 @@ export function signup(credentials) {
                 let { token, user, success } = response.data;
                 localStorage.setItem("token", token);
                 dispatch(logon(success, user));
+                dispatch(loadWords());
             })
             .catch((err) => {
                 console.error(err);
@@ -60,6 +62,7 @@ export function signin(credentials) {
                 let { token, user, success } = response.data;
                 localStorage.setItem("token", token);
                 dispatch(logon(success, user));
+                dispatch(loadWords())  //set to get data form user
             })
             .catch((err) => {
                 console.error(err);
@@ -89,6 +92,7 @@ export function loadWords() {
             .then((response) => {
                 console.log(response.data);
                 // dispatch(setWords(response.data));
+                dispatch(setWords(response.data));  //set to get data form user
             })
             .catch((err) => {
                 console.error(err);
