@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./signup.css";
+import signup from "./signUp.jpg";
 
 export default class SignupComponent extends Component {
     render() {
@@ -12,6 +13,8 @@ export default class SignupComponent extends Component {
                     <input onChange={this.props.handleChange} value={this.props.password} name="password" type="password" placeholder="#" /><br/><br/>
                     <button type="submit">Create Account</button>
                     <p>{this.props.errMsg}</p>
+                    <br/>
+                    <img src={signup} className="signUp-img" alt=""/>
                 </form>
             </div>
         )
