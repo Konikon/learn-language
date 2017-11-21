@@ -4,11 +4,12 @@ import StudyInvitation from './StudyInvitation';
 
 
 function StudyComponent(props) {
-    const { isFirstTime, startPlay, playingWords, currentIndex } = props;
+    const { isShow, isFirstTime, startPlay, playingWords, currentIndex, getNextRandomIndex, gotIt, toggleIsShow } = props;
     const word = playingWords[currentIndex];
     if (playingWords.length === 0) return (
         <StudyInvitation
             isFirstTime={isFirstTime}
+            playingWords={playingWords}
             startPlay={startPlay}
         />
     );
@@ -17,14 +18,15 @@ function StudyComponent(props) {
         <div>
             <h3>Learn</h3>
             <h3>{word.textEn}</h3>
-            <h3>{word.description}</h3>
             <p>You passed</p>
-            <button className="btn btn-danger">Show/Hide</button>
+            <h3>{ isShow ? word.description : '------' }</h3>
+            <button className="btn btn-danger" onClick={toggleIsShow}>{ isShow ? 'Hide' : 'Show' }
+            </button>
             <br /><br />
-            <button className="btn btn-danger">
+            <button className="btn btn-danger" onClick={getNextRandomIndex}>
                 Repeat
             </button>
-            <button className="btn btn-success">
+            <button className="btn btn-success" onClick={() => gotIt(word._id)}>
                 Got it!
             </button>
         </div>
