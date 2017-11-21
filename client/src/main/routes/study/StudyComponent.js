@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-function StudyComponent() {
+function StudyComponent(props) {
+    const { isFirstTime, startPlay} = props;
     return (
         <div>
             <h3>Learn</h3>
@@ -17,4 +19,4 @@ function StudyComponent() {
     );
 }
 
-export default StudyComponent;
+export default connect(state => state)(StudyComponent);
