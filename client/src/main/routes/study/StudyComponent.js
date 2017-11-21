@@ -5,7 +5,7 @@ function StudyComponent() {
         <div>
             <h3>Learn</h3>
             <p>You passed</p>
-            <button className="btn btn-danger">Show/Hide</button>
+            <button className="btn btn-danger">Show / Hide</button>
             <br /><br />
             <button className="btn btn-danger">
                 Repeat

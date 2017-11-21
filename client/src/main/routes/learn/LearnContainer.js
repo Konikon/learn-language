@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addWord } from "../../../redux/actions/index";
 import { LearnComponent } from './LearnComponent';
 import WordContainer from './word/WordContainer';
+import "./learn.css"
 
 class LearnContainer extends Component {
     constructor(props) {
