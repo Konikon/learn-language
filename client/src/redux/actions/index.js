@@ -90,7 +90,7 @@ export function loadWords() {
     return (dispatch) => {
         axios.get(wordsUrl)
             .then((response) => {
-                console.log(response.data);
+                // console.log(response.data);
                 // dispatch(setWords(response.data));
                 dispatch(setWords(response.data));  //set to get data form user
             })
