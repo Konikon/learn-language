@@ -13,6 +13,7 @@ class StudyContainer extends Component {
             currentIndex: 0,
             isFirstTime: true
         };
+        this.toggleIsShow = this.toggleIsShow.bind(this);
         this.startPlay = this.startPlay.bind(this);
     }
 
@@ -31,6 +32,7 @@ class StudyContainer extends Component {
             <div>
                 <StudyComponent
                     {...this.state}
+                    toggleIsShow={this.toggleIsShow}
                     startPlay={this.startPlay}
                 />
             </div>

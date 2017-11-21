@@ -1,7 +1,8 @@
 import React from 'react';
 
 function StudyInvitation(props) {
-    if (props.isFirstTime)
+    const { isFirstTime, startPlay } = props;
+    if (isFirstTime)
     return (
         <div>
             <button className="btn btn-success" onClick={props.startPlay}>Study now!</button>
