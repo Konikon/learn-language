@@ -10,39 +10,39 @@ wordRouter.use(auth);
 
 wordRouter.route("/")
     .get((req, res) => {
-        Word.find({user: req.user._id}, (err, learns) => {
+        Word.find({user: req.user._id}, (err, words) => {
             if (err) return res.status(500).send(err);
-            return res.status(200).send(learns);
+            return res.status(200).send(words);
         });
     })
     .post((req, res) => {
         let word = new Word(req.body);
         word.user = req.user._id;
-        word.save((err, newLearn) => {
+        word.save((err, newWord) => {
             if (err) return res.status(500).send(err);
-            return res.status(201).send(newLearn);
+            return res.status(201).send(newWord);
         })
     });
 
-    wordRouter.route("/:learnId")
+    wordRouter.route("/:wordId")
     .get((req, res) => {
-        Learn.findOne({ user: req.user._id, _id: req.params.learnId }, (err, learn) => {
+        Word.findOne({ user: req.user._id, _id: req.params.wordId }, (err, word) => {
             if (err) return res.status(500).send(err);
-            if (!learn) return res.status(404).send("No learn item found.");
-            return res.status(200).send(learn);
+            if (!word) return res.status(404).send("No word item found.");
+            return res.status(200).send(word);
         });
     })
     .put((req, res) => {
-        Learn.findOneAndUpdate({user: req.user._id,_id: req.params.learnId}, req.body, { new: true }, (err, learn) => {
+        Word.findOneAndUpdate({user: req.user._id,_id: req.params.wordId}, req.body, { new: true }, (err, word) => {
             if (err) return res.status(500).send(err);
-            return res.status(200).send(learn);
+            return res.status(200).send(word);
         });
     })
     .delete((req, res) => {
-        Learn.findOneAndRemove({user: req.user._id,_id: req.params.learnId },
-            (err, learn) => {
+        Word.findOneAndRemove({user: req.user._id,_id: req.params.wordId },
+            (err, word) => {
                 if (err) return res.status(500).send(err);
-                return res.status(200).send(learn);
+                return res.status(200).send(word);
             })
     });
 

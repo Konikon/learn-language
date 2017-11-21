@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import StudyInvitation from './StudyInvitation';
-
+import "./study.css";
 
 function StudyComponent(props) {
     const { isShow, isFirstTime, startPlay, playingWords, currentIndex, getNextRandomIndex, gotIt, toggleIsShow, words } = props;
@@ -15,7 +15,7 @@ function StudyComponent(props) {
     );
 
     return (
-        <div>
+        <div className="study-wrap">
             <h3>Learn</h3>
             <h3>{word.textEn}</h3>
             <h3>{ isShow ? word.description : '------' }</h3>

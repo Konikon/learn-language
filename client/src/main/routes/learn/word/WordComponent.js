@@ -4,7 +4,7 @@ import { deleteWord } from '../../../../redux/actions/index';
 import "./word.css";
 
 function WordComponent(props) {
-    const { textEn, description, id } = props.word;
+    const { textEn, description, _id } = props.word;
     const { isUpdating, handleChange, inputs, deleteWord, toggleUpdating, updateWord } = props;
     return (
         <div className="word-wrap">
@@ -33,7 +33,7 @@ function WordComponent(props) {
                   </div>
 
               </div>
-              <button className="btn btn-danger" onClick={() => deleteWord(id)}>Remove</button>
+              <button className="btn btn-danger" onClick={() => deleteWord(_id)}>Remove</button>
               <button className="btn btn-primary" onClick={toggleUpdating}>Update</button>
           </div>
 

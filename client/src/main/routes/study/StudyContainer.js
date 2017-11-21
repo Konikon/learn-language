@@ -3,10 +3,6 @@ import { connect } from 'react-redux';
 import StudyComponent from './StudyComponent';
 import { loadWords } from '../../../redux/actions/index';
 
-import StudyInvitation from './StudyInvitation';
-import "./study.css"
-
-
 class StudyContainer extends Component {
     constructor(props) {
         super(props);

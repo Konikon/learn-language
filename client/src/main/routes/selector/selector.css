@@ -1,6 +1,6 @@
 .selector-wrapp{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   height:100%;
   width: 100%;
@@ -9,4 +9,12 @@
   background: url("./selector-page.png") no-repeat;
   background-size: cover;
   height: 100vh;
+}
+.level{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.dropbtn{
+  cursor: pointer;
 }
