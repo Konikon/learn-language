@@ -51,12 +51,6 @@ class StudyContainer extends Component {
 
     render() {
         return (
-<<<<<<< HEAD
-            <div className="study-wrap">
-                <StudyComponent />
-                <StudyInvitation />
-        </div>
-=======
             <div>
                 <StudyComponent
                     {...this.state}
@@ -66,7 +60,6 @@ class StudyContainer extends Component {
                     gotIt={this.gotIt}
                 />
             </div>
->>>>>>> master
         )
     }
 
