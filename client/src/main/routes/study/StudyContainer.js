@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import StudyComponent from './StudyComponent';
 import { loadWords } from '../../../redux/actions/index';
 
+import StudyInvitation from './StudyInvitation';
+import "./study.css"
 
 
 class StudyContainer extends Component {
@@ -49,6 +51,12 @@ class StudyContainer extends Component {
 
     render() {
         return (
+<<<<<<< HEAD
+            <div className="study-wrap">
+                <StudyComponent />
+                <StudyInvitation />
+        </div>
+=======
             <div>
                 <StudyComponent
                     {...this.state}
@@ -58,6 +66,7 @@ class StudyContainer extends Component {
                     gotIt={this.gotIt}
                 />
             </div>
+>>>>>>> master
         )
     }
 

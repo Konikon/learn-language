@@ -6,7 +6,10 @@ import "./profile-boder.jpg";
 function ProfileComponent(props){
   return(
       <div className="profile-wrapper">
-        <h3 className="profile-text"> <br/><br/><br/> Welcome <br/><br/><br/>{props.user.username} !</h3>
+          <div className="profile-text">
+          <h3 > <br/><br/><br/> Welcome <br/><br/><br/>{props.user.username} !</h3>
+          <p>Now click your level of difficulty in selector tab</p>
+          </div>
       </div>
   )
 }

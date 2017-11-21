@@ -8,6 +8,7 @@ class WordContainer extends Component {
         super(props);
         this.state = {
             isUpdating: false,
+            isFlipped: false,
             inputs: {
                 textEn: props.word.textEn,
                 description: props.word.description
@@ -16,12 +17,15 @@ class WordContainer extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.toggleUpdating = this.toggleUpdating.bind(this);
         this.updateWord = this.updateWord.bind(this);
+        this.toggleFlip = this.toggleFlip.bind(this);
     }
 
     toggleUpdating() {
         this.setState(prevState => ({ isUpdating: !prevState.isUpdating }));
     }
-
+    toggleFlip(){
+        this.setState(prevState => ({isFlipped: !prevState.isFlipped}));
+    }
     handleChange(e) {
         e.persist();
         this.setState((prevState) => {
@@ -52,6 +56,7 @@ class WordContainer extends Component {
                 isUpdating={isUpdating}
                 toggleUpdating={this.toggleUpdating}
                 updateWord={this.updateWord}
+                toggleFlip={this.toggleFlip}
 
             />
         );

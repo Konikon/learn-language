@@ -17,10 +17,15 @@ function StudyComponent(props) {
     return (
         <div>
             <h3>Learn</h3>
+<<<<<<< HEAD
+            <p>You passed</p>
+            <button className="btn btn-danger">Show / Hide</button>
+=======
             <h3>{word.textEn}</h3>
             <h3>{ isShow ? word.description : '------' }</h3>
             <button className="btn btn-danger" onClick={toggleIsShow}>{ isShow ? 'Hide' : 'Show' }
             </button>
+>>>>>>> master
             <br /><br />
             <button className="btn btn-danger" onClick={getNextRandomIndex}>
                 Repeat
