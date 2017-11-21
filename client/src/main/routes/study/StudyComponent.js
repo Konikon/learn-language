@@ -18,8 +18,6 @@ function StudyComponent(props) {
         <div>
             <h3>Learn</h3>
             <h3>{word.textEn}</h3>
-            {/* bug when you repeat is good, but when you got it, BUGGED */}
-            <p>You passed {words.length - playingWords.length}/{words.length}</p>
             <h3>{ isShow ? word.description : '------' }</h3>
             <button className="btn btn-danger" onClick={toggleIsShow}>{ isShow ? 'Hide' : 'Show' }
             </button>
@@ -30,6 +28,8 @@ function StudyComponent(props) {
             <button className="btn btn-success" onClick={() => gotIt(word._id)}>
                 Got it!
             </button>
+            <br /><br />
+            <p>You passed {words.length - playingWords.length}/{words.length}</p>
         </div>
     );
 }

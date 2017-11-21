@@ -22,7 +22,7 @@ class StudyContainer extends Component {
     startPlay() {
         const playingWords = [...this.props.words];
         playingWords.forEach(word => word.isMemorized = false);
-        this.setState({ playingWords, isFirstTime: false });
+        this.setState({ playingWords, isFirstTime: false, currentIndex: 0 });
     }
 
     getNextRandomIndex() {
@@ -38,7 +38,8 @@ class StudyContainer extends Component {
 
     gotIt(_id) {
         this.setState(prevState => ({
-            playingWords: prevState.playingWords.filter(word => word._id !== _id)
+            playingWords: prevState.playingWords.filter(word => word._id !== _id),
+            currentIndex: prevState.currentIndex === 0 ? 0 : prevState.currentIndex - 1
         }));
     }
 

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { deleteWord } from '../../../../redux/actions/index';
 
 function WordComponent(props) {
-    const { textEn, description, _id } = props.word;
+    const { textEn, description, id } = props.word;
     const { isUpdating, handleChange, inputs, deleteWord, toggleUpdating, updateWord } = props;
     return (
         <div>
@@ -24,7 +24,7 @@ function WordComponent(props) {
             <div style={{ display: isUpdating ? 'none' : 'block' }}>
                 <h3>{textEn}</h3>
                 <p>{description}</p>
-                <button className="btn btn-danger" onClick={() => deleteWord(_id)}>Remove</button>
+                <button className="btn btn-danger" onClick={() => deleteWord(id)}>Remove</button>
                 <button className="btn btn-primary" onClick={toggleUpdating}>Update</button>
             </div>
         </div>
