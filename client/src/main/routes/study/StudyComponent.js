@@ -1,20 +1,42 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import StudyInvitation from './StudyInvitation';
 
-function StudyComponent() {
+
+function StudyComponent(props) {
+    const { isShow, isFirstTime, startPlay, playingWords, currentIndex, getNextRandomIndex, gotIt, toggleIsShow, words } = props;
+    const word = playingWords[currentIndex];
+    if (playingWords.length === 0) return (
+        <StudyInvitation
+            isFirstTime={isFirstTime}
+            playingWords={playingWords}
+            startPlay={startPlay}
+        />
+    );
+
     return (
         <div>
             <h3>Learn</h3>
+<<<<<<< HEAD
             <p>You passed</p>
             <button className="btn btn-danger">Show / Hide</button>
+=======
+            <h3>{word.textEn}</h3>
+            <h3>{ isShow ? word.description : '------' }</h3>
+            <button className="btn btn-danger" onClick={toggleIsShow}>{ isShow ? 'Hide' : 'Show' }
+            </button>
+>>>>>>> master
             <br /><br />
-            <button className="btn btn-danger">
+            <button className="btn btn-danger" onClick={getNextRandomIndex}>
                 Repeat
             </button>
-            <button className="btn btn-success">
+            <button className="btn btn-success" onClick={() => gotIt(word._id)}>
                 Got it!
             </button>
+            <br /><br />
+            <p>You passed {words.length - playingWords.length}/{words.length}</p>
         </div>
     );
 }
 
-export default StudyComponent;
+export default connect(state => state)(StudyComponent);
