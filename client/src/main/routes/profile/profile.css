@@ -1,0 +1,15 @@
+.profile-wrapper{
+  background: url("./profile-boder.jpg") no-repeat;
+  background-size: cover;
+  height: 100vh;
+
+}
+.profile-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height:100%;
+  width: 100%;
+  justify-content: center;
+  font-size: 3em;
+}

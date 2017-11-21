@@ -7,5 +7,7 @@
     margin: auto;
     display: flex;
     justify-content: space-around;
-    background-color: #785417;
+    margin-top: 2%;
+    font-size: 2em;
+
 }
