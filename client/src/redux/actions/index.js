@@ -78,7 +78,7 @@ export function logout() {
     }
 }
 
-//TODOS
+//Set Word
 function setWords(words) {
     return {
         type: "SET_WORDS",
