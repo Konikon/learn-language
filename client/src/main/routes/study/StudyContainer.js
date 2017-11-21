@@ -11,7 +11,7 @@ class StudyContainer extends Component {
         this.state = {
             playingWords: [],
             currentIndex: 0,
-            isFirstTime: true
+            isFirstTime: false
         };
         this.toggleIsShow = this.toggleIsShow.bind(this);
         this.startPlay = this.startPlay.bind(this);
