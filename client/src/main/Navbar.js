@@ -14,7 +14,7 @@ class Navbar extends React.Component {
                 { isAuthenticated ? <div className="nav-link"><Link to="/selector">Selector</Link></div> : null }
                 { isAuthenticated ? <div className="nav-link"><Link to="/profile">Profile</Link></div> : null }
                 { isAuthenticated ? <div className="nav-link"><Link to="/learn">Learn</Link></div> : null }
-                { isAuthenticated ? <div className="nav-link"><Link to="/study">Study</Link></div> : null }
+                { isAuthenticated ? <div className="nav-link"><Link to="/study">Test</Link></div> : null }
                 { isAuthenticated ? <div className="nav-link"><button className="btn btn-danger" onClick={this.props.logout}>Logout</button></div> : null }
             </div>
         )

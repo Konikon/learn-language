@@ -7,7 +7,7 @@ function StudyInvitation(props) {
     return (
 
         <div className="study-wrap">
-            <button className="btn btn-success" onClick={startPlay}>Study now!</button>
+            <button className="btn btn-success" onClick={startPlay}>Test now!</button>
         </div>
 
     );
@@ -15,9 +15,9 @@ function StudyInvitation(props) {
 
         <div className="study-wrap">
             <p>Congratulations!</p>
-            <button className="btn btn-success" onClick={startPlay}>Study again</button>
+            <button className="btn btn-success" onClick={startPlay}>Test again</button>
         </div>
-        
+
     );
 }
 
