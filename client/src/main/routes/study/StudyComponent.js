@@ -16,9 +16,9 @@ function StudyComponent(props) {
 
     return (
         <div className="study-wrap">
-            <h3>Learn</h3>
-            <h3>{word.textEn}</h3>
-            <h3>{ isShow ? word.description : '------' }</h3>
+            <h1>TEST</h1>
+            <h3>{word.textEn}(English)</h3>
+            <h3>{ isShow ? word.description + '(Vietnamese)' : '------' }</h3>
             <button className="btn btn-danger" onClick={toggleIsShow}>{ isShow ? 'Hide' : 'Show' }
             </button>
             <br /><br />

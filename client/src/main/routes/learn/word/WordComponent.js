@@ -25,10 +25,10 @@ function WordComponent(props) {
               <div className="flip-container" style={{ display: isUpdating ? 'none' : 'block' }}>
                   <div className="flipper">
                         <div className="front card">
-                            <h1>{textEn}</h1>
+                            <h1>{textEn}(English)</h1>
                         </div>
                         <div className="back card">
-                            <h1>{description}</h1>
+                            <h1>{description}(Vietnamese)</h1>
                         </div>
                   </div>
 

@@ -23,9 +23,10 @@ function AboutComponent(){
 
           <img className="about-bg" src={about} alt=""/>
           <div className="info">
-          <p > The app is made by <i> Mak and Phat</i> using:  </p>
+          <p > The app is made by <i><a href="" target="" >Mak</a> and <a href="" target="" >Phat</a></i></p>{/*//this will have links to our profile or resume*/}
               <ul>
-                  <li> User authentication by React token  </li>
+                  <li> It is a RESTful API  </li>
+                  <li> Uses token authentication  </li>
                   <li> ReactJS on front-end for user interface and interaction  </li>
                   <li> NodeJS and Express for  Back-end with MongoDB for noSQL database manager</li>
               </ul>
@@ -35,7 +36,7 @@ function AboutComponent(){
               <img src={mongodb} alt=""/>
               <img src={git} alt="" />
               <img src={html5} alt=""/>
-              <img src={nodejs} alt=""/>
+              <img src={nodejs} alt=""/> 
               <img src={js} alt=""/>
               <img src={css} alt=""/>
               </div>

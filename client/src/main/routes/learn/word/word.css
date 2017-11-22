@@ -1,6 +1,4 @@
 .word-wrap{
-  border: 3px ridge;
-  border-radius: 10px;
   height: auto;
   width: 60%;
   text-align: center;
@@ -13,8 +11,8 @@
   perspective: 250px;
 }
 .flipper{
-  width: 150px;
-  height: 225px;
+  width: 350px;
+  height: 425px;
   margin: auto;
   position: relative;
 }
