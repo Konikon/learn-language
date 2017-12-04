@@ -1,18 +1,13 @@
-# learn-language
-<p> This app is a virtual flashcard collection
-          for learning new language. User can:</p>
-              <ul>
-                  <li> Study preloaded  flashcards </li>
-                  <li> Add new flashcard </li>
-                  <li> Track their progress  </li>
-              </ul>
+# Learn Language React App
+ - This app is a virtual flashcard collection for learning new language. 
+ ## User can:
+- Study preloaded  flashcards 
+- Add new flashcard 
+- Track their progress 
 
+## The app is made by Mak and Phat
+- It is a RESTful API 
+- Uses token authentication 
+- ReactJS on front-end for user interface and interaction
+- NodeJS and Express for  Back-end with MongoDB for noSQL database manager
 
-
-
-<p > The app is made by Mak and Phat</p>
-          <li> It is a RESTful API  </li>
-          <li> Uses token authentication  </li>
-          <li> ReactJS on front-end for user interface and interaction  </li>
-          <li> NodeJS and Express for  Back-end with MongoDB for noSQL database manager</li>
-      </ul>
