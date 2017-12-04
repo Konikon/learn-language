@@ -2,6 +2,17 @@
  - Built a app in React that allows users to sign in, login, logout, view their profiles, and add/remove vocabulary to their list. Store out user info in state.
  - Store our authorization token in Local Storage so that even if we refresh the page, we don't lose it with database MongoDB.
  
+ ## Screenshots
+
+## <img src="https://s3-us-west-1.amazonaws.com/phat14191/Learn+Language/Learn1.png" width="700px"/>
+## <img src="https://s3-us-west-1.amazonaws.com/phat14191/Learn+Language/Learn2.png" width="700px"/>
+## <img src="https://s3-us-west-1.amazonaws.com/phat14191/Learn+Language/Learn3.png" width="700px"/>
+## <img src="https://s3-us-west-1.amazonaws.com/phat14191/Learn+Language/Learn4.png" width="700px"/>
+## <img src="https://s3-us-west-1.amazonaws.com/phat14191/Learn+Language/Learn5.png" width="700px"/>
+## <img src="https://s3-us-west-1.amazonaws.com/phat14191/Learn+Language/Learn6.png" width="700px"/>
+## <img src="https://s3-us-west-1.amazonaws.com/phat14191/Learn+Language/Learn7.png" width="700px"/>
+
+
  ## User can:
 - Study preloaded flashcards 
 - Add new flashcard 
