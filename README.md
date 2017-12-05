@@ -24,7 +24,7 @@
 - ReactJS on front-end for user interface and interaction
 - NodeJS and Express for  Back-end with MongoDB for noSQL database manager
 
-#### Setup instructions
+## Setup instructions
 1. Clone this git repository https://github.com/vschool-september-2017/learn-language
 2. cd learn-language
 3. cd server -> npm install -> nodemon server.js (run server and don't close it)
