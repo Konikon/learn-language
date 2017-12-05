@@ -26,13 +26,8 @@
 
 #### Setup instructions
 1. Clone this git repository https://github.com/vschool-september-2017/learn-language
-
 2. cd learn-language
-
-3. cd server -> npm install -> run server: nodemon server.js
-
+3. cd server -> npm install -> nodemon server.js (run server and don't close it)
 5. cd .. 
-
-6. cd client -> npm install -> run client: npm start
-
+6. cd client -> npm install -> npm start (run react website)
 7. You can study language my App. : )
