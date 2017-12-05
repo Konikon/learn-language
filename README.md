@@ -30,4 +30,4 @@
 3. cd server -> npm install -> nodemon server.js (run server and don't close it)
 5. cd .. 
 6. cd client -> npm install -> npm start (run react website)
-7. You can study language my App. : )
+7. You can study language my with App. : )
